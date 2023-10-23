@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+-->
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- Color theme for statusbar -->
+    <!-- <meta name="theme-color" content="#2196f3"> -->
+    <meta name="color-scheme" content="light dark">
+
+    <!-- Your app title -->
+    <title>My App</title>
+    <!-- Path to Framework7 Library CSS -->
+    <link rel="stylesheet" href="lib/framework7/framework7-bundle.css">
+    <!-- Path to icons -->
+    <link rel="stylesheet" href="css/icons.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Statusbar overlay -->
+        <div class="statusbar"></div>
+    
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+       
+            <!-- Top Navbar -->
+            <div class="navbar">
+                <div class="navbar-bg"></div>
+                <div class="navbar-inner">
+                    <div class="left"><i class="icon icon-back"></i></div>
+                    <div class="title">Page1</div>
+                    <div class="right"><i class="icon icon-forward"></i></div>
+                </div>
+            </div>
+    
+            <!-- Toolbar 
+            <div class="toolbar toolbar-bottom">
+                <div class="toolbar-inner">
+                    Toolbar links
+                <a href="#" class="link">Link 1</a>
+                <a href="#" class="link">Link 2</a>
+                </div> 
+            </div> -->
+        
+        <!-- Initial Page, "data-name" contains page name -->
+            <div data-name="index" class="page">
+                <!-- Scrollable page content -->
+                <div class="page-content">
+                    <div class="block">
+                        
+                        <!-- CONTENIDO DEMO -->
+                        <h2>REGISTRO 1/2</h2>
+                        
+                        <div class="list list-strong-ios list-dividers-ios inset-ios">
+                            <ul>
+                                <li class="item-content item-input item-input-with-info">
+                                  <div class="item-media">
+                                    <i class="icon demo-list-icon"></i>
+                                  </div>
+                                  <div class="item-inner">
+                                    <div class="item-title item-label">E-mail</div>
+                                    <div class="item-input-wrap">
+                                      <input type="email" id="indexEmail" placeholder="Tu e-mail" required validate>
+                                      <span class="input-clear-button"></span>
+                                      <div class="item-input-info">Validación de e-mail</div>
+                                    </div>
+                                  </div>
+                                </li>
+
+
+                                <li class="item-content item-input">
+                                  <div class="item-media">
+                                    <i class="icon demo-list-icon"></i>
+                                  </div>
+                                  <div class="item-inner">
+                                    <div class="item-input-wrap">
+                                      <input type="password" id="indexPassword" placeholder="Tu password">
+                                      <span class="input-clear-button"></span>
+                                    </div>
+                                  </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <p id="indexMensaje"></p>
+
+                        <br><br>
+
+                        <a id="indexSeguir" class="button button-fill button-round">Seguir</a>
+
+                        <br><br>
+
+                        <a href="/masInfo/" class="button button-fill button-round">MAS INFO</a>
+                        
+                        
+                        
+                        <!-- FIN DE DEMO -->
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+
+        const firebaseConfig = {
+        apiKey: "AIzaSyCUjRmmM9n2TWTunnr84xToX2xnjxGr1qc",
+        authDomain: "decision-9b46d.firebaseapp.com",
+        projectId: "decision-9b46d",
+        storageBucket: "decision-9b46d.appspot.com",
+        messagingSenderId: "15148323879",
+        appId: "1:15148323879:web:c4368a2ef87ea8fae1ea02"
+    };
+        <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+
+        
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/framework7/framework7-bundle.min.js"></script>
+    <!--<script type="text/javascript" src="lib/framework7/framework7.js"></script>-->
+    <script type="text/javascript" src="js/my-app.js"></script>
+
+    
+</body>
+
+</html>
