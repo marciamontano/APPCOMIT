@@ -1,5 +1,5 @@
 <!-- We don't need a full layout in this file because this page will be parsed with Ajax.  -->
-<div class="page" data-name="masInfo">
+<div class="page" data-name="fondos">
     <div class="navbar">
         <div class="navbar-inner sliding">
         <div class="left">
@@ -12,10 +12,14 @@
         </div>
     </div>
     <div class="page-content">
-        <div class="block-title">Pagina MAS INFO</div>
-        <div class="block block-strong">
-            <p>Volver al index: </p>
-            <a href="/index/">IR a index</a>
+        <div class="block-title">FONDOS</div>
+        <div class="block block-strong-ios block-outline-ios">
+            <p>Photo Browser could be opened in a three ways - as a Standalone component (Popup modification), in Popup, and
+              as separate Page:</p>
+            <div class="grid grid-cols-3 grid-gap">
+              <a class="button button-fill" @click=${openPage}>Page</a>
+            </div>
+          </div>
         </div>
     </div>
 </div>

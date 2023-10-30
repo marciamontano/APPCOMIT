@@ -66,7 +66,7 @@
                     <div class="block">
                         
                         <!-- CONTENIDO DEMO -->
-                        <h2>REGISTRO 1/2</h2>
+                        <h2>Registrate!</h2>
                         
                         <div class="list list-strong-ios list-dividers-ios inset-ios">
                             <ul>
@@ -77,7 +77,7 @@
                                   <div class="item-inner">
                                     <div class="item-title item-label">E-mail</div>
                                     <div class="item-input-wrap">
-                                      <input type="email" id="indexEmail" placeholder="Tu e-mail" required validate>
+                                      <input type="email" id="indexEmail" placeholder="E-mail" required validate>
                                       <span class="input-clear-button"></span>
                                       <div class="item-input-info">Validación de e-mail</div>
                                     </div>
@@ -91,7 +91,7 @@
                                   </div>
                                   <div class="item-inner">
                                     <div class="item-input-wrap">
-                                      <input type="password" id="indexPassword" placeholder="Tu password">
+                                      <input type="password" id="indexPassword" placeholder="Contraseña">
                                       <span class="input-clear-button"></span>
                                     </div>
                                   </div>
@@ -103,29 +103,44 @@
 
                         <br><br>
 
-                        <a id="indexSeguir" class="button button-fill button-round">Seguir</a>
+                        <a id="btnRegistro" class="button button-fill button-round">REGISTRARME</a>
 
                         <br><br>
 
-                        <a href="/masInfo/" class="button button-fill button-round">MAS INFO</a>
+                        <a href="/info/" class="button button-fill button-round">MAS INFO</a>
+
+                        <br><br>
                         
+                        <div class="grid grid-cols-1 grid-gap">
+                            <div><a href="/login/" class="button button-outline button-round button-raised">Ya tengo usuario, quiero iniciar sesión!!</a></div>
+                        </div>
                         
-                        
-                        <!-- FIN DE DEMO -->
-                        
-                        
-                        
+                        <br><br>
+
+                        <div id="listaUsuarios">
+                         
+                            
+                            
                         
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+                        <!-- FIN DE DEMO -->
 
 
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+<!--
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+    
+-->
 
+    <script>
+        // Your web app's Firebase configuration
         const firebaseConfig = {
         apiKey: "AIzaSyCUjRmmM9n2TWTunnr84xToX2xnjxGr1qc",
         authDomain: "decision-9b46d.firebaseapp.com",
@@ -133,10 +148,11 @@
         storageBucket: "decision-9b46d.appspot.com",
         messagingSenderId: "15148323879",
         appId: "1:15148323879:web:c4368a2ef87ea8fae1ea02"
-    };
-        <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
-
-        
+        };
+        // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+  
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/framework7-bundle.min.js"></script>
     <!--<script type="text/javascript" src="lib/framework7/framework7.js"></script>-->
