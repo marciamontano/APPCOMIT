@@ -72,6 +72,7 @@ $$(document).on('page:init', '.page[data-name="confirmacion"]', function (e) {
 
     $$("#pagConfirmacionNombre").html(nombre);
     $$("#pagConfirmacionEmail").html(email);
+    
 
 })
 
@@ -81,6 +82,28 @@ $$(document).on('page:init', '.page[data-name="info"]', function (e) {
     console.log('Cargo Info');
 })
 
+$$(document).on('page:init', '.page[data-name="home"]', function (e) {
+    console.log('Cargo HOME');
+
+})
+
+$$(document).on('page:init', '.page[data-name="configuracion"]', function (e) {
+    console.log('Cargo CONFIGURACION');
+})
+
+$$(document).on('page:init', '.page[data-name="categorias"]', function (e) {
+    console.log('Cargo CATEGORIAS');
+})
+
+$$(document).on('page:init', '.page[data-name="fondos"]', function (e) {
+    console.log('Cargo FONDOS');
+    $$(".imagen").on('click', fnCambiarFondo)
+})
+
+$$(document).on('page:init', '.page[data-name="perfil"]', function (e) {
+    console.log('Cargo PERFIL');
+})
+    
 $$(document).on('page:init', '.page[data-name="about"]', function (e) {
     console.log('Cargo ABOUT');
 })
@@ -103,7 +126,9 @@ function sembrarDatos() {
 
 
 /* MIS FUNCIONES */
+
 var nombre, apellido, email, clave;
+
 //CODIGO DE LOGIN:
     // cada un@ pone su magia para recuperar el mail y la clave de un form...
 
@@ -221,58 +246,8 @@ var nombre, apellido, email, clave;
         })
     }
 
-/*<script>
-  export default (props, { $f7, $on }) => {
-    const photos = [
-      {
-        url: 'img/logo.png',
-        caption: 'Amazing beach in Goa, India'
-      },
-      'http://placekitten.com/1024/1024',
-      'img/lock.jpg',
-      {
-        url: 'img/monkey.jpg',
-        caption: 'I met this monkey in Chinese mountains'
-      },
-      {
-        url: 'img/mountains.jpg',
-        caption: 'Beautiful mountains in Zhangjiajie, China'
-      }
-    ];
-    const thumbs = [
-      'img/beach.jpg',
-      'http://placekitten.com/1024/1024',
-      'img/lock.jpg',
-      'img/monkey.jpg',
-      'img/mountains.jpg'
-    ]
-
-    let page;
-    
-    const openPage = () => {
-      page.open();
+    //Cambiar Fondo de Pantalla
+    function fnCambiarFondo(){
+        var imagenURL = $$(this).attr("src");
+        $$("#imagenFondo").attr("src", imagenURL);
     }
-   
-    $on('pageInit', () => {
-      // Create PBs when page init
-      page = $f7.photoBrowser.create({
-        photos: photos,
-        thumbs: thumbs,
-        type: 'page',
-        backLinkText: 'Back',
-      });
-      
-        
-    $on('pageBeforeRemove', () => {
-      // Destroy PBs on page remove
-      standalone.destroy();
-      popup.destroy();
-      page.destroy();
-      standaloneDark.destroy();
-      popupDark.destroy();
-      pageDark.destroy();
-    });
-
-    return $render;
-  };
-</script>*/
