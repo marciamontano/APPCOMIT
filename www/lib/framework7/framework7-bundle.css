@@ -19828,3 +19828,26 @@ button.text-editor-button .material-icons sub {
 [class*='border-color-'] {
   border-color: var(--f7-theme-color-border-color) !important;
 }
+
+.content {
+  position: relative;
+  text-align: center;
+}
+
+.text-overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.background-image {
+  width: 100%;
+  height: auto;
+}
+
