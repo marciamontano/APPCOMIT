@@ -135,7 +135,9 @@
 -->
 
     <script>
+
         import "firebase/compat/messaging";
+
 
         // Your web app's Firebase configuration
         const firebaseConfig = {
@@ -146,8 +148,10 @@
         messagingSenderId: "15148323879",
         appId: "1:15148323879:web:c4368a2ef87ea8fae1ea02"
         };
+
         // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
+         firebase.initializeApp(firebaseConfig);
+
 
         // Initialize Firebase Cloud Messaging and get a reference to the service
         const messaging = firebase.messaging();

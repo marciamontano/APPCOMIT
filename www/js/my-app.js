@@ -90,7 +90,7 @@ messaging.getToken({ vapidKey: '<BIXe3x_rV6o-XD-ZGuvJkAPSGG04hlLaD2FKxvpq2J22qp7
   });
 
 
-  
+
   
 
 
@@ -162,6 +162,11 @@ $$(document).on('page:init', '.page[data-name="fondos"]', function (e) {
 
 $$(document).on('page:init', '.page[data-name="perfil"]', function (e) {
     console.log('Cargo PERFIL');
+    $$("#perfilNombre").html(nombre);
+    $$("#perfilApellido").html(apellido);
+    $$("#perfilEmail").html(email);
+    $$("#perfilContraseña").html(clave);
+    
 })
     
 $$(document).on('page:init', '.page[data-name="about"]', function (e) {
