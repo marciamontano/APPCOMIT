@@ -38,56 +38,11 @@ var colMensaje = db.collection("MENSAJES");
 
 
 
-import { getMessaging, getToken } from "firebase/messaging";
-
-const messaging = getMessaging();
-// Add the public key generated from the console here.
-getToken(messaging, {vapidKey: "BIXe3x_rV6o-XD-ZGuvJkAPSGG04hlLaD2FKxvpq2J22qp7JgoY8CX6_Bb3S4Onkt7FES6Socok983rMIEELiXU"});
-
-function requestPermission() {
-    console.log('Requesting permission...');
-    Notification.requestPermission().then((permission) => {
-      if (permission === 'granted') {
-        console.log('Notification permission granted.');
-      }
-    })
-}
-
-// Get registration token. Initially this makes a network call, once retrieved
-// subsequent calls to getToken will return from cache.
-messaging.getToken({ vapidKey: '<BIXe3x_rV6o-XD-ZGuvJkAPSGG04hlLaD2FKxvpq2J22qp7JgoY8CX6_Bb3S4Onkt7FES6Socok983rMIEELiXU>' }).then((currentToken) => {
-    if (currentToken) {
-      // Send the token to your server and update the UI if necessary
-      // ...
-    } else {
-      // Show permission request UI
-      console.log('No registration token available. Request permission to generate one.');
-      // ...
-    }
-  }).catch((err) => {
-    console.log('An error occurred while retrieving token. ', err);
-    // ...
-  });
 
 
-  FirebaseMessaging.getInstance().getToken()
-  .addOnCompleteListener(new OnCompleteListener<String>() {
-      @Override
-      public void onComplete(@NonNull Task<String> task) {
-        if (!task.isSuccessful()) {
-          Log.w(TAG, "Fetching FCM registration token failed", task.getException());
-          return;
-        }
 
-        // Get new FCM registration token
-        String token = task.getResult();
 
-        // Log and toast
-        String msg = getString(R.string.msg_token_fmt, token);
-        Log.d(TAG, msg);
-        Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
-      }
-  });
+  
 
 
 
@@ -156,7 +111,7 @@ $$(document).on('page:init', '.page[data-name="categorias"]', function (e) {
 
 $$(document).on('page:init', '.page[data-name="fondos"]', function (e) {
     console.log('Cargo FONDOS');
-    $$("[id^='f']").on('click', fnCambiarFondo)
+    //$$(".imagen").on('click', fnCambiarFondo)
 
 })
 
@@ -312,8 +267,4 @@ var nombre, apellido, email, clave;
     }
 
     //Cambiar Fondo de Pantalla
-    function fnCambiarFondo(){
-        var imagenURL = $$(this).data("image");
-        $$(".background-image").css("background-image", "url(" + imagenURL + ")");
-    }
-    
+    // function fnCambiarFondo(){}
