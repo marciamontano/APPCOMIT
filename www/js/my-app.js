@@ -24,6 +24,9 @@ var app = new Framework7({
         { path: '/categorias/',            url: 'categorias.html',    },
         { path: '/fondos/',            url: 'fondos.html',    },
         { path: '/perfil/',            url: 'perfil.html',    },
+        { path: '/afirmaciones/',            url: 'afirmaciones.html',    },
+
+        
     ]
     // ... other parameters
   });
@@ -101,6 +104,13 @@ $$(document).on('page:init', '.page[data-name="home"]', function (e) {
 
 })
 
+$$(document).on('page:init', '.page[data-name="afirmaciones"]', function (e) {
+    console.log('Cargo Afirmacion');
+
+    //$$("#btnAgregarAfirmacion").on('click', fnAgregarAfirmacion)
+
+})
+
 $$(document).on('page:init', '.page[data-name="configuracion"]', function (e) {
     console.log('Cargo CONFIGURACION');
 })
@@ -117,10 +127,11 @@ $$(document).on('page:init', '.page[data-name="fondos"]', function (e) {
 
 $$(document).on('page:init', '.page[data-name="perfil"]', function (e) {
     console.log('Cargo PERFIL');
-    $$("#perfilNombre").html(nombre);
-    $$("#perfilApellido").html(apellido);
-    $$("#perfilEmail").html(email);
-    $$("#perfilContraseña").html(clave);
+
+    $$("#perfilNombre").val(nombre);
+    $$("#perfilApellido").val(apellido);
+    $$("#perfilEmail").val(email);
+    $$("#perfilContraseña").val(clave);
     
 })
     
@@ -163,9 +174,15 @@ var nombre, apellido, email, clave;
                 // Signed in
                 var user = userCredential.user;
                 console.log("Bienvenid@!!! " + email);
+                colPersonas.doc(email).get()
+                .then(function(datos){
+                    nombre = datos.data().nombre
+                    apellido = datos.data().apellido
 
-                mainView.router.navigate('/home/');
-                // ...
+                    mainView.router.navigate('/home/');
+                })
+                
+            
               })
               .catch((error) => {
                 var errorCode = error.code;
@@ -268,3 +285,10 @@ var nombre, apellido, email, clave;
 
     //Cambiar Fondo de Pantalla
     // function fnCambiarFondo(){}
+
+
+    //function fnAgregarAfirmacion() {}
+
+
+
+    

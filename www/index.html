@@ -115,7 +115,14 @@
                             <div><a href="/login/" class="button button-outline button-round button-raised">Ya tengo usuario, quiero iniciar sesión!!</a></div>
                         </div>
                              
-                            
+
+                        
+                        
+
+                        
+                        
+
+
                             
                     </div>
                 </div>
@@ -128,13 +135,12 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
-
+<!--
     <script src="https://www.gstatic.com/firebasejs/9.14.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.14.0/firebase-messaging-compat.js"></script>
 
-<!--
+
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
-    
 -->
 
     <script>
@@ -152,10 +158,10 @@
         };
 
         // Initialize Firebase
-         const app = firebase.initializeApp(firebaseConfig);
+         firebase.initializeApp(firebaseConfig);
 
 
-        // Initialize Firebase Cloud Messaging and get a reference to the service
+        /* Initialize Firebase Cloud Messaging and get a reference to the service
         const messaging = firebase.messaging();
         messaging.getToken({ vapidKey: "BIXe3x_rV6o-XD-ZGuvJkAPSGG04hlLaD2FKxvpq2J22qp7JgoY8CX6_Bb3S4Onkt7FES6Socok983rMIEELiXU" })
 
@@ -170,6 +176,7 @@
             messagesElement.appendChild(dataHeaderElement)
             messagesElement.appendChild(dataElement)
         })
+        */
 
         
 
